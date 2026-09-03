@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASERDATA — Consultoría empresarial y análisis de datos | Colombia</title>
+  <meta name="description" content="Consultoría estratégica, inteligencia comercial y banco de datos para PYMEs en Colombia. Acompañamiento directo, propuestas por alcance, transparencia total." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://asesorianegociosvirt.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ASERDATA — Consultoría empresarial basada en datos" />
+  <meta property="og:description" content="Inteligencia comercial y consultoría estratégica para PYMEs colombianas. Diagnóstico, estrategia, banco de datos e implementación." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asesorianegociosvirt.com/" />
+  <meta property="og:locale" content="es_CO" />
+
+  <!-- Datos estructurados: Organización / Negocio local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "ASERDATA — Asesorías Negocios & Banco de Datos",
+    "image": "https://asesorianegociosvirt.com/og.jpg",
+    "url": "https://asesorianegociosvirt.com/",
+    "telephone": "+57-320-547-8966",
+    "priceRange": "$$",
+    "description": "Consultoría estratégica e inteligencia comercial para PYMEs en Colombia.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[RELLENAR: dirección física completa]",
+      "addressLocality": "[RELLENAR: ciudad]",
+      "addressRegion": "[RELLENAR: departamento]",
+      "addressCountry": "CO"
+    },
+    "areaServed": { "@type": "Country", "name": "Colombia" },
+    "founder": [
+      { "@type": "Person", "name": "Diomedes de Jesus Cuello Moron", "jobTitle": "Consultor senior" },
+      { "@type": "Person", "name": "Karen Hasbleidy Gotting Bravo", "jobTitle": "Representante legal" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============================
+       Reset + Tokens
+       ============================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    :root {
+      --c-primary: #0f2a47;
+      --c-primary-soft: #1e4976;
+      --c-accent: #0d9488;
+      --c-text: #1f2937;
+      --c-muted: #6b7280;
+      --c-border: #e5e7eb;
+      --c-bg-soft: #f8fafc;
+      --c-bg-card: #ffffff;
+      --c-warning: #b45309;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(15, 42, 71, 0.05);
+      --shadow-md: 0 4px 12px rgba(15, 42, 71, 0.08);
+    }
+
+    a { color: var(--c-primary-soft); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    h1, h2, h3 { color: var(--c-primary); line-height: 1.2; margin: 0 0 0.5em; }
+    h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: -0.01em; }
+    h2 { font-size: clamp(1.5rem, 2.5vw, 1.9rem); font-weight: 700; }
+    h3 { font-size: 1.15rem; font-weight: 600; }
+    p { margin: 0 0 1em; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* ============================
+       Header / Nav
+       ============================ */
+    header.site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; max-width: 1120px; margin: 0 auto;
+    }
+    .logo {
+      font-weight: 700; color: var(--c-primary); font-size: 1.1rem; letter-spacing: 0.04em;
+    }
+    .logo span { color: var(--c-accent); }
+    .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--c-text); font-size: 0.95rem; }
+    .nav-links a.btn { color: #fff; }
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .nav-links.mobile-open { display: flex; flex-direction: column; gap: 14px; padding: 16px 20px; background: #fff; position: absolute; top: 56px; left: 0; right: 0; border-bottom: 1px solid var(--c-border); }
+    }
+    .nav-toggle { display: none; background: none; border: 0; font-size: 1.4rem; color: var(--c-primary); cursor: pointer; }
+    @media (max-width: 760px) { .nav-toggle { display: inline-block; } }
+
+    /* ============================
+       Buttons
+       ============================ */
+    .btn {
+      display: inline-block; padding: 12px 20px; border-radius: var(--r-md);
+      font-weight: 600; font-size: 0.95rem; cursor: pointer; border: 0;
+      transition: transform 0.05s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn-primary { background: var(--c-primary); color: #fff; }
+    .btn-primary:hover { background: var(--c-primary-soft); text-decoration: none; }
+    .btn-secondary { background: #fff; color: var(--c-primary); border: 1px solid var(--c-border); }
+    .btn-secondary:hover { border-color: var(--c-primary); text-decoration: none; }
+    .btn-accent { background: var(--c-accent); color: #fff; }
+
+    /* ============================
+       Hero
+       ============================ */
+    .hero {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 80px 0 70px;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .hero .badge {
+      display: inline-block;
+      padding: 5px 12px; border-radius: 999px;
+      background: #e6f4f1; color: var(--c-accent);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero p.lead { font-size: 1.1rem; color: var(--c-muted); max-width: 720px; }
+    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .hero-note {
+      margin-top: 24px; padding: 14px 18px;
+      background: #fff7ed; border-left: 3px solid var(--c-warning);
+      border-radius: var(--r-sm); font-size: 0.92rem; color: #78350f;
+      max-width: 760px;
+    }
+    .hero-note strong { color: var(--c-warning); }
+
+    /* ============================
+       Sections
+       ============================ */
+    section { padding: 70px 0; }
+    section.alt { background: var(--c-bg-soft); }
+    .section-intro { max-width: 720px; margin-bottom: 36px; }
+    .section-intro p { color: var(--c-muted); }
+
+    /* ============================
+       Grid / Cards
+       ============================ */
+    .grid {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card h3 { margin-top: 0; }
+    .card .icon {
+      width: 38px; height: 38px; border-radius: var(--r-sm);
+      background: #e6f4f1; color: var(--c-accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; margin-bottom: 12px;
+    }
+
+    /* Casos */
+    .case {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: 24px;
+    }
+    .case .case-sector {
+      display: inline-block; font-size: 0.78rem; font-weight: 600;
+      color: var(--c-accent); text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .case p { font-size: 0.95rem; color: #374151; }
+    .case p strong { color: var(--c-primary); }
+
+    /* ============================
+       Pasos / Steps
+       ============================ */
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      position: relative; padding: 0 0 22px 60px; margin-bottom: 4px;
+      border-left: 2px solid var(--c-border);
+      margin-left: 18px;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: -22px; top: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--c-primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem;
+    }
+    .steps li:last-child { border-left-color: transparent; padding-bottom: 0; }
+
+    /* ============================
+       Tabla de tarifas
+       ============================ */
+    .pricing-wrap { overflow-x: auto; border: 1px solid var(--c-border); border-radius: var(--r-lg); }
+    table.pricing {
+      width: 100%; border-collapse: collapse; min-width: 640px;
+      background: var(--c-bg-card);
+    }
+    table.pricing th, table.pricing td {
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--c-border);
+      font-size: 0.95rem;
+    }
+    table.pricing thead th {
+      background: var(--c-primary); color: #fff; font-weight: 600; font-size: 0.9rem;
+    }
+    table.pricing tbody tr:last-child td { border-bottom: 0; }
+    .pricing-note { font-size: 0.88rem; color: var(--c-muted); margin-top: 14px; }
+
+    /* ============================
+       Equipo / Profile
+       ============================ */
+    .profile {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--c-bg-card); border: 1px solid var(--c-border);
+      border-radius: var(--r-lg); padding: 24px; margin-bottom: 16px;
+    }
+    .profile .avatar {
+      flex: 0 0 64px; width: 64px; height: 64px; border-radius: 50%;
+      background: var(--c-primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.2rem;
+    }
+    .profile h3 { margin: 0 0 4px; }
+    .profile .role { color: var(--c-accent); font-size: 0.9rem; font-weight: 600; margin: 0 0 8px; }
+
+    /* ============================
+       Contacto
+       ============================ */
+    .contact-grid { display: grid; gap: 32px; grid-template-columns: 1.4fr 1fr; }
+    @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+    form { display: grid; gap: 14px; }
+    form label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--c-primary); }
+    form input, form textarea, form select {
+      width: 100%; padding: 11px 12px; margin-top: 5px;
+      border: 1px solid var(--c-border); border-radius: var(--r-sm);
+      font-size: 0.95rem; font-family: inherit; color: var(--c-text);
+      background: #fff;
+    }
+    form input:focus, form textarea:focus, form select:focus {
+      outline: 2px solid var(--c-accent); outline-offset: 1px; border-color: var(--c-accent);
+    }
+    form textarea { min-height: 110px; resize: vertical; }
+    form .checkbox { font-weight: 400; font-size: 0.85rem; color: var(--c-muted); display: flex; gap: 8px; align-items: flex-start; }
+    form .checkbox input { width: auto; margin-top: 3px; }
+    form button { justify-self: start; }
+    .contact-info { background: var(--c-bg-soft); border-radius: var(--r-lg); padding: 24px; }
+    .contact-info p { font-size: 0.92rem; margin-bottom: 8px; }
+    .contact-info strong { color: var(--c-primary); }
+
+    /* ============================
+       Footer
+       ============================ */
+    footer.site-footer {
+      background: var(--c-primary); color: #cbd5e1; padding: 50px 0 30px;
+    }
+    footer.site-footer a { color: #e2e8f0; }
+    footer.site-footer h4 { color: #fff; font-size: 1rem; margin: 0 0 12px; }
+    footer .footer-grid { display: grid; gap: 30px; grid-template-columns: 1.4fr 1fr 1fr; }
+    @media (max-width: 760px) { footer .footer-grid { grid-template-columns: 1fr; } }
+    footer .copyright {
+      margin-top: 30px; padding-top: 20px; border-top: 1px solid #1e3a5f;
+      font-size: 0.85rem; color: #94a3b8;
+    }
+
+    /* ============================
+       Cookie banner
+       ============================ */
+    #cookie-banner {
+      position: fixed; left: 16px; right: 16px; bottom: 16px;
+      background: #fff; border: 1px solid var(--c-border);
+      border-radius: var(--r-md); box-shadow: var(--shadow-md);
+      padding: 16px 18px; z-index: 100;
+      max-width: 720px; margin: 0 auto;
+      font-size: 0.9rem;
+    }
+    #cookie-banner p { margin: 0 0 12px; }
+    .cookie-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cookie-actions button {
+      padding: 8px 14px; border-radius: var(--r-sm);
+      border: 1px solid var(--c-border); background: #fff; color: var(--c-primary);
+      font-size: 0.88rem; font-weight: 600; cursor: pointer;
+    }
+    .cookie-actions button.primary { background: var(--c-primary); color: #fff; border-color: var(--c-primary); }
+
+    /* ============================
+       Util
+       ============================ */
+    .muted { color: var(--c-muted); }
+    .text-center { text-align: center; }
+    .small { font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="nav">
+      <a href="/" class="logo">ASER<span>DATA</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')" aria-label="Menú">☰</button>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#casos">Casos</a>
+        <a href="#tarifas">Tarifas</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto" class="btn btn-primary">Agendar diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Consultoría · Inteligencia comercial · Colombia</span>
+      <h1>Decisiones de negocio basadas en datos verificables</h1>
+      <p class="lead">
+        En ASERDATA combinamos análisis de datos, inteligencia comercial y consultoría estratégica
+        para PYMEs colombianas. Trabajamos contigo para entender tu mercado, tus clientes y tu
+        operación antes de proponer cualquier solución.
+      </p>
+      <div class="cta-group">
+        <a href="#contacto" class="btn btn-primary">Agendar sesión de diagnóstico (30 min)</a>
+        <a href="#tarifas" class="btn btn-secondary">Ver tarifas y alcance</a>
+      </div>
+      <p class="hero-note">
+        <strong>Transparencia:</strong> la sesión de diagnóstico es una conversación estructurada
+        de 30 minutos para entender tu negocio. No incluye entrega de informes, propuestas
+        ejecutables ni planes de acción. Las propuestas de trabajo se cotizan por separado
+        según el alcance, y se formalizan mediante contrato antes de iniciar.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Servicios ===== -->
+  <section id="servicios" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Servicios</h2>
+        <p>Cuatro líneas de trabajo. Cada engagement se cotiza después del diagnóstico inicial, en función del alcance real que tu negocio necesita.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">①</div>
+          <h3>Diagnóstico comercial</h3>
+          <p>Análisis inicial de mercado, competencia y posicionamiento. Identificamos oportunidades de crecimiento con base en datos públicos, entrevistas estructuradas y, cuando aplica, información que tú nos compartes.</p>
+        </article>
+        <article class="card">
+          <div class="icon">②</div>
+          <h3>Estrategia y modelo de negocio</h3>
+          <p>Definición o refinamiento de propuesta de valor, modelo de ingresos, segmentación de clientes y roadmap de ejecución a 90 días.</p>
+        </article>
+        <article class="card">
+          <div class="icon">③</div>
+          <h3>Banco de datos de mercado</h3>
+          <p>Acceso a datasets curados de segmentos, prospectos B2B y reportes trimestrales de sectores específicos. Suscripción mensual o trimestral con entregas programadas y SLA definido.</p>
+        </article>
+        <article class="card">
+          <div class="icon">④</div>
+          <h3>Implementación y tableros</h3>
+          <p>Construcción de dashboards, reportería recurrente y acompañamiento en la ejecución de las estrategias definidas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Metodología ===== -->
+  <section id="metodologia">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Cómo trabajamos</h2>
+        <p>Cuatro pasos, sin sorpresas. Sabes qué recibes, cuándo lo recibes y cuánto cuesta antes de comprometerte.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Diagnóstico (30 minutos, sin costo)</h3>
+          <p>Conversación estructurada para entender tu negocio, tus retos y tu contexto. Evaluamos si ASERDATA es el aliado adecuado para lo que necesitas. Si no lo somos, te lo decimos y, si podemos, te orientamos.</p>
+        </li>
+        <li>
+          <h3>Propuesta y alcance</h3>
+          <p>En los 3 a 5 días hábiles siguientes te enviamos una propuesta formal con alcance, cronograma, entregables e inversión desglosada. Puedes pedir ajustes antes de firmar.</p>
+        </li>
+        <li>
+          <h3>Ejecución por hitos</h3>
+          <p>Trabajamos contra hitos pactados por escrito, con pagos contra entrega y aprobación de cada hito. Acceso a canal directo de comunicación durante todo el proyecto.</p>
+        </li>
+        <li>
+          <h3>Cierre y transferencia</h3>
+          <p>Entregables documentados, sesión de transferencia y, opcionalmente, acompañamiento mensual de mantenimiento con tarifa preferencial.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Casos ===== -->
+  <section id="casos" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Casos de trabajo</h2>
+        <p>Ejemplos anonimizados de proyectos recientes. Compartimos únicamente casos donde el cliente autorizó expresamente la divulgación pública.</p>
+      </div>
+      <div class="grid">
+        <article class="case">
+          <span class="case-sector">Sector retail — Bogotá</span>
+          <h3>Reposicionamiento de marca regional</h3>
+          <p><strong>Situación:</strong> marca con varios años en el mercado perdiendo participación frente a competidores digitales.</p>
+          <p><strong>Trabajo:</strong> análisis de transacciones, entrevistas a clientes y benchmark competitivo.</p>
+          <p><strong>Resultado:</strong> redefinición de propuesta de valor y plan de canal. El cliente implementó los cambios durante los meses siguientes.</p>
+        </article>
+        <article class="case">
+          <span class="case-sector">Servicios B2B</span>
+          <h3>Segmentación para empresa de consultoría técnica</h3>
+          <p><strong>Situación:</strong> equipo comercial saturado de leads de baja calidad.</p>
+          <p><strong>Trabajo:</strong> refinamiento de ICP, criterios de calificación y guion de descubrimiento.</p>
+          <p><strong>Resultado:</strong> reducción de reuniones improductivas. El cliente extendió el acompañamiento.</p>
+        </article>
+        <article class="case">
+          <span class="case-sector">Sector alimentos</span>
+          <h3>Tablero de márgenes por SKU</h3>
+          <p><strong>Situación:</strong> fabricante con múltiples referencias sin visibilidad real de rentabilidad por producto.</p>
+          <p><strong>Trabajo:</strong> modelado de datos, integración con ERP y diseño de tablero interactivo.</p>
+          <p><strong>Resultado:</strong> tablero entregado en pocas semanas. Decisiones de portafolio tomadas con base en datos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tarifas ===== -->
+  <section id="tarifas">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Tarifas y alcance</h2>
+        <p>Precios en pesos colombianos (COP). IVA no incluido. La cotización formal se emite después del diagnóstico inicial y antes de iniciar cualquier trabajo.</p>
+      </div>
+      <div class="pricing-wrap">
+        <table class="pricing">
+          <thead>
+            <tr>
+              <th>Modalidad</th>
+              <th>Alcance</th>
+              <th>Tarifa de referencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diagnóstico inicial</td>
+              <td>30 min. Conversación estructurada. Sin entregables.</td>
+              <td>Sin costo</td>
+            </tr>
+            <tr>
+              <td>Consultoría por horas</td>
+              <td>Sesiones de trabajo con consultor senior.</td>
+              <td>Desde [RELLENAR: $XXX.XXX] COP / hora</td>
+            </tr>
+            <tr>
+              <td>Proyecto de diagnóstico comercial</td>
+              <td>2 a 4 semanas. Informe + presentación + plan de acción.</td>
+              <td>Desde [RELLENAR: $X.XXX.XXX] COP</td>
+            </tr>
+            <tr>
+              <td>Banco de datos — Plan Trimestral</td>
+              <td>Acceso a datasets + reportes trimestrales.</td>
+              <td>[RELLENAR: $X.XXX.XXX] COP / trimestre</td>
+            </tr>
+            <tr>
+              <td>Banco de datos — Plan Anual</td>
+              <td>Acceso completo + reportes + soporte prioritario.</td>
+              <td>[RELLENAR: $X.XXX.XXX] COP / año</td>
+            </tr>
+            <tr>
+              <td>Acompañamiento mensual</td>
+              <td>Reuniones recurrentes, seguimiento y ajustes.</td>
+              <td>[RELLENAR: $X.XXX.XXX] COP / mes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pricing-note">
+        <strong>Política de pago:</strong> los proyectos se facturan 50% al inicio y 50% contra
+        entrega y aprobación del último hito. Las suscripciones al banco de datos se facturan
+        por anticipado.
+      </p>
+      <p class="pricing-note">
+        <strong>Política de cancelación y devolución (Ley 1480 de 2011, Estatuto del Consumidor):</strong>
+        para las suscripciones, puedes cancelar en cualquier momento; te devolvemos la parte
+        proporcional no consumida dentro de los 15 días hábiles siguientes a la solicitud. Para
+        proyectos por horas o de alcance fijo, una vez iniciado el trabajo no hay reembolso del
+        anticipo; los hitos pendientes pueden suspenderse con aviso previo de 10 días.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Equipo ===== -->
+  <section id="equipo" class="alt">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Quiénes somos</h2>
+        <p>Dos roles claros: el consultor responsable del trabajo técnico y la representante legal del negocio. Toda la información contractual se firma a nombre de la persona jurídica o natural registrada ante la DIAN.</p>
+      </div>
+
+      <article class="profile">
+        <div class="avatar">DC</div>
+        <div>
+          <h3>Diomedes de Jesus Cuello Moron</h3>
+          <p class="role">Consultor senior y responsable comercial</p>
+          <p>Especialista en inteligencia comercial y análisis de datos aplicados a PYMEs. Acompaña a empresas colombianas en procesos de diagnóstico estratégico, segmentación de mercado y diseño de tableros para la toma de decisiones.</p>
+          <p class="small muted"><strong>Formación:</strong> [RELLENAR: títulos y certificaciones].</p>
+          <p class="small muted"><strong>Experiencia:</strong> [RELLENAR: años, sectores y proyectos destacados].</p>
+        </div>
+      </article>
+
+      <article class="profile">
+        <div class="avatar">KG</div>
+        <div>
+          <h3>Karen Hasbleidy Gotting Bravo</h3>
+          <p class="role">Representante legal</p>
+          <p>Responsable legal y administrativa de ASERDATA. Firma los contratos, emite las facturas y garantiza el cumplimiento normativo de todos los servicios.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-intro">
+        <h2>Agendar sesión de diagnóstico</h2>
+        <p>Cuéntanos brevemente sobre tu negocio y te contactaremos en 1 día hábil para coordinar la sesión de 30 minutos. No usamos tus datos para ningún otro fin.</p>
+      </div>
+      <div class="contact-grid">
+        <form action="https://formsubmit.co/[RELLENAR: tu-email-de-dominio]" method="POST" novalidate>
+          <label>Nombre
+            <input type="text" name="nombre" required autocomplete="name" />
+          </label>
+          <label>Empresa (opcional)
+            <input type="text" name="empresa" autocomplete="organization" />
+          </label>
+          <label>Email
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>Teléfono (opcional)
+            <input type="tel" name="telefono" autocomplete="tel" />
+          </label>
+          <label>¿En qué podemos ayudarte?
+            <textarea name="mensaje" required placeholder="Cuéntanos brevemente tu negocio y el reto que quieres trabajar."></textarea>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="consentimiento" required />
+            <span>Autorizo el tratamiento de mis datos personales conforme a la <a href="privacidad.html">Política de Privacidad</a> y la Ley 1581 de 2012 de Colombia.</span>
+          </label>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="Nueva solicitud de diagnóstico — ASERDATA" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="true" />
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </form>
+
+        <aside class="contact-info">
+          <h3>Otros canales</h3>
+          <p><strong>Email:</strong> [RELLENAR: contacto@asesorianegociosvirt.com]</p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/573205478966?text=Hola%2C%20quiero%20agendar%20diagn%C3%B3stico">+57 320 547 8966</a> (respuesta en horario laboral)</p>
+          <p><strong>Dirección:</strong> [RELLENAR: dirección física completa]</p>
+          <p><strong>Horario:</strong> lunes a viernes, 8:00 a 17:00 (hora Colombia)</p>
+          <p class="small muted">Si prefieres, también puedes escribirnos directamente por WhatsApp. Pero el formulario es el canal más rápido para reservar tu sesión.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>ASERDATA — Asesorías Negocios & Banco de Datos</h4>
+          <p class="small">Razón social: [RELLENAR: nombre legal completo]</p>
+          <p class="small">NIT / RUT: [RELLENAR]</p>
+          <p class="small">Dirección: [RELLENAR: dirección física]</p>
+          <p class="small">Email: [RELLENAR: email de dominio propio]</p>
+          <p class="small">Teléfono: +57 320 547 8966</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p class="small"><a href="terminos.html">Términos y Condiciones</a></p>
+          <p class="small"><a href="privacidad.html">Política de Privacidad</a></p>
+          <p class="small"><a href="terminos.html#habeas-data">Ley 1581 de 2012 (Habeas Data)</a></p>
+        </div>
+        <div>
+          <h4>Sitio</h4>
+          <p class="small"><a href="#servicios">Servicios</a></p>
+          <p class="small"><a href="#tarifas">Tarifas</a></p>
+          <p class="small"><a href="#contacto">Contacto</a></p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 ASERDATA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Cookie banner ===== -->
+  <div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+    <p>Usamos cookies técnicas para que el sitio funcione y, opcionalmente, cookies de análisis para entender cómo se usa la página. Puedes aceptar, rechazar o configurar tus preferencias.</p>
+    <div class="cookie-actions">
+      <button class="primary" onclick="setCookieConsent('all')">Aceptar todas</button>
+      <button onclick="setCookieConsent('none')">Rechazar</button>
+      <button onclick="setCookieConsent('necessary')">Solo necesarias</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Mostrar banner solo si no hay preferencia guardada
+      var consent = localStorage.getItem('aserdata_cookie_consent');
+      var banner = document.getElementById('cookie-banner');
+      if (!consent) banner.hidden = false;
+      else banner.hidden = true;
+
+      window.setCookieConsent = function (level) {
+        localStorage.setItem('aserdata_cookie_consent', level);
+        localStorage.setItem('aserdata_cookie_consent_at', new Date().toISOString());
+        banner.hidden = true;
+        // Si acepta análisis, cargar Google Analytics (reemplazar G-XXXXXXX)
+        if (level === 'all' && '[RELLENAR: GA4-ID]' !== '[RELLENAR: GA4-ID]') {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=[RELLENAR: GA4-ID]';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', '[RELLENAR: GA4-ID]', { anonymize_ip: true });
+        }
+      };
+    })();
+  </script>
+
+</body>
+</html>
